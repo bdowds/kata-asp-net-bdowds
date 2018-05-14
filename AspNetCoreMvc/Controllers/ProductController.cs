@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AspNetCoreMvc.Models;
 
 namespace AspNetCoreMvc.Controllers
 {
@@ -12,6 +13,7 @@ namespace AspNetCoreMvc.Controllers
         // GET: Product
         public ActionResult Index()
         {
+
             return View();
         }
 
