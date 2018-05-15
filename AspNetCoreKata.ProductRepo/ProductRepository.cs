@@ -7,7 +7,7 @@ namespace AspNetCoreKata.ProductRepo
 {
     public class ProductRepository : IProductRepository
     {
-        readonly IDbConnection _conn;
+        private readonly IDbConnection _conn;
 
         public ProductRepository(IDbConnection conn)
         {
@@ -32,12 +32,12 @@ namespace AspNetCoreKata.ProductRepo
             }
         }
 
-        public Product GeProduct(int id)
+        public Product GetProduct(int id)
         {
             using (var conn = _conn)
             {
                 conn.Open();
-                return conn.Query<Product>("SELECT *, ProductId AS Id FROM product WHERE ProductId = @Id").FirstOrDefault();
+                return conn.Query<Product>("SELECT *, ProductId AS Id FROM product WHERE ProductId = @Id", new { id }).FirstOrDefault();
             }
         }
 

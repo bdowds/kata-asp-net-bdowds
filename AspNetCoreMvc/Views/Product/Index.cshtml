@@ -1,4 +1,5 @@
-﻿@model IEnumerable<AspNetCoreMvc.Models.Product>
+﻿@using AspNetCoreKata.ProductRepo
+@model IEnumerable<AspNetCoreKata.ProductRepo.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,16 +13,30 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(product => product.Id)
+            </th>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(product => product.Name)
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+
+                @Html.ActionLink("Edit", "Edit", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id })
             </td>
         </tr>
 }

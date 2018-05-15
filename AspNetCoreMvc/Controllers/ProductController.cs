@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCoreKata.ProductRepo;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreMvc.Models;
@@ -10,11 +11,17 @@ namespace AspNetCoreMvc.Controllers
 {
     public class ProductController : Controller
     {
+        private readonly IProductRepository _prodRepo;
+
+        public ProductController( IProductRepository prodRepo)
+        {
+            _prodRepo = prodRepo;
+        }
         // GET: Product
         public ActionResult Index()
         {
-
-            return View();
+            var products = _prodRepo.GetProducts();
+            return View(products);
         }
 
         // GET: Product/Details/5
@@ -72,7 +79,8 @@ namespace AspNetCoreMvc.Controllers
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var Id = _prodRepo.GetProduct(id);
+            return View(Id);
         }
 
         // POST: Product/Delete/5
@@ -82,7 +90,7 @@ namespace AspNetCoreMvc.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+                _prodRepo.DeleteProduct(id);
 
                 return RedirectToAction(nameof(Index));
             }
