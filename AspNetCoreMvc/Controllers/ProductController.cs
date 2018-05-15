@@ -13,7 +13,7 @@ namespace AspNetCoreMvc.Controllers
     {
         private readonly IProductRepository _prodRepo;
 
-        public ProductController( IProductRepository prodRepo)
+        public ProductController(IProductRepository prodRepo)
         {
             _prodRepo = prodRepo;
         }
@@ -44,7 +44,7 @@ namespace AspNetCoreMvc.Controllers
         {
             try
             {
-                var prod = new Product { Name = collection["Name"]};
+                var prod = new Product { Name = collection["Name"] };
                 _prodRepo.AddProduct(prod);
 
                 return RedirectToAction(nameof(Index));
