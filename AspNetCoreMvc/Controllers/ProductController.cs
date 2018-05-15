@@ -44,7 +44,8 @@ namespace AspNetCoreMvc.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                var prod = new Product { Name = collection["Name"] };
+                _prodRepo.AddProduct(prod);
 
                 return RedirectToAction(nameof(Index));
             }
