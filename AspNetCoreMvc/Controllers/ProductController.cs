@@ -27,7 +27,8 @@ namespace AspNetCoreMvc.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var product = _prodRepo.GetProduct(id);
+            return View(product);
         }
 
         // GET: Product/Create
