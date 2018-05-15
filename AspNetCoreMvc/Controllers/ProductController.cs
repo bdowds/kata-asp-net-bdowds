@@ -18,9 +18,9 @@ namespace AspNetCoreMvc.Controllers
             _prodRepo = prodRepo;
         }
         // GET: Product
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var products = _prodRepo.GetProducts();
+            var products = await _prodRepo.GetProducts();
             return View(products);
         }
 
@@ -44,7 +44,7 @@ namespace AspNetCoreMvc.Controllers
         {
             try
             {
-                var prod = new Product { Name = collection["Name"] };
+                var prod = new Product { Name = collection["Name"]};
                 _prodRepo.AddProduct(prod);
 
                 return RedirectToAction(nameof(Index));

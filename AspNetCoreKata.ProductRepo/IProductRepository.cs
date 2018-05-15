@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 
 namespace AspNetCoreKata.ProductRepo
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetProducts();
+        Task<IEnumerable<Product>> GetProducts();
         Product GetProduct(int id);
         int DeleteProduct(int id);
         int UpdateProduct(Product prod);

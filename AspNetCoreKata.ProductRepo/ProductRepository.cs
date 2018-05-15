@@ -2,6 +2,7 @@
 using System.Linq;
 using Dapper;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace AspNetCoreKata.ProductRepo
 {
@@ -41,12 +42,12 @@ namespace AspNetCoreKata.ProductRepo
             }
         }
 
-        public IEnumerable<Product> GetProducts()
+        public Task<IEnumerable<Product>> GetProducts()
         {
             using (var conn = _conn)
             {
                 conn.Open();
-                return conn.Query<Product>("SELECT *, ProductId AS Id FROM product");
+                return conn.QueryAsync<Product>("SELECT *, ProductId AS Id FROM product");
             }
         }
 
