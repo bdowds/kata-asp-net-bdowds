@@ -56,7 +56,8 @@ namespace AspNetCoreMvc.Controllers
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var prod = _prodRepo.GetProduct(id);
+            return View(prod);
         }
 
         // POST: Product/Edit/5
@@ -66,7 +67,8 @@ namespace AspNetCoreMvc.Controllers
         {
             try
             {
-                // TODO: Add update logic here
+                var prod = new Product { Name = collection["Name"], Id = id };
+                _prodRepo.UpdateProduct(prod);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -79,8 +81,8 @@ namespace AspNetCoreMvc.Controllers
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
-            var Id = _prodRepo.GetProduct(id);
-            return View(Id);
+            var prod = _prodRepo.GetProduct(id);
+            return View(prod);
         }
 
         // POST: Product/Delete/5
