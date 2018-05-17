@@ -1,7 +1,10 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreMvc", "AspNetCoreMvc\AspNetCoreMvc.csproj", "{0CE3ABF2-89B9-47DC-8DA9-6C37464B6B76}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreMvc", "AspNetCoreMvc\AspNetCoreMvc.csproj", "{0CE3ABF2-89B9-47DC-8DA9-6C37464B6B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreKata.ProductRepo", "AspNetCoreKata.ProductRepo\AspNetCoreKata.ProductRepo.csproj", "{34DE6BC0-1FC2-4C95-BE35-C4D6D029768D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +16,15 @@ Global
 		{0CE3ABF2-89B9-47DC-8DA9-6C37464B6B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CE3ABF2-89B9-47DC-8DA9-6C37464B6B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CE3ABF2-89B9-47DC-8DA9-6C37464B6B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DE6BC0-1FC2-4C95-BE35-C4D6D029768D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DE6BC0-1FC2-4C95-BE35-C4D6D029768D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DE6BC0-1FC2-4C95-BE35-C4D6D029768D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DE6BC0-1FC2-4C95-BE35-C4D6D029768D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C9D0C27-D0B8-444F-82C3-01FD7BE975D8}
 	EndGlobalSection
 EndGlobal
