@@ -25,9 +25,9 @@ namespace AspNetCoreMvc.Controllers
         }
 
         // GET: Product/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            var product = _prodRepo.GetProduct(id);
+            var product = await _prodRepo.GetProduct(id);
             return View(product);
         }
 

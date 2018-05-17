@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreMvc.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Product")]
+    [Route("api/product")]
     public class ProductApiController : Controller
     {
         private readonly IProductRepository _prodRepo;
@@ -28,9 +28,9 @@ namespace AspNetCoreMvc.Controllers
 
         // GET: api/ProductApi/5
         [HttpGet("{id}", Name = "Get")]
-        public Product Get(int id)
+        public async Task<Product> Get(int id)
         {
-            return _prodRepo.GetProduct(id);
+            return await _prodRepo.GetProduct(id);
         }
 
         // POST: api/ProductApi   /create

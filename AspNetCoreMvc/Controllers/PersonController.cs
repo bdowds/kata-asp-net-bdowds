@@ -13,18 +13,18 @@ namespace AspNetCoreMvc.Controllers
         {
             var people = new List<Person>
             {
-                new Person() { Name = "Brandon" },
-                new Person() { Name = "David" },
-                new Person() { Name = "Cody" },
-                new Person() { Name = "Steven" },
-                new Person() { Name = "Jeff" },
-                new Person() { Name = "Lisa" },
-                new Person() { Name = "Chris" },
-                new Person() { Name = "Skylar" },
-                new Person() { Name = "Francesca" },
-                new Person() { Name = "Reid" },
-                new Person() { Name = "Trey" },
-                new Person() { Name = "Chip" }
+                new Person { Name = "Brandon" },
+                new Person { Name = "David" },
+                new Person { Name = "Cody" },
+                new Person { Name = "Steven" },
+                new Person { Name = "Jeff" },
+                new Person { Name = "Lisa" },
+                new Person { Name = "Chris" },
+                new Person { Name = "Skylar" },
+                new Person { Name = "Francesca" },
+                new Person { Name = "Reid" },
+                new Person { Name = "Trey" },
+                new Person { Name = "Chip" }
             };
 
             return View(people);

@@ -33,12 +33,12 @@ namespace AspNetCoreKata.ProductRepo
             }
         }
 
-        public Product GetProduct(int id)
+        public Task<Product> GetProduct(int id)
         {
             using (var conn = _conn)
             {
                 conn.Open();
-                return conn.Query<Product>("SELECT *, ProductId AS Id FROM product WHERE ProductId = @Id", new { id }).FirstOrDefault();
+                return conn.QueryFirstAsync<Product>("SELECT *, ProductId AS Id FROM product WHERE ProductId = @Id", new { id });
             }
         }
 
